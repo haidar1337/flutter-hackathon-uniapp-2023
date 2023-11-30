@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projectname/common_widgets/login_page_textfield.dart';
 import 'package:projectname/common_widgets/login_page_title_texts.dart';
+import 'package:projectname/features/tabs/presentation/tabs.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -82,7 +83,12 @@ class LoginPage extends StatelessWidget {
                 width: double.infinity,
                 height: 48,
                 child: FilledButton(
-                  onPressed: () {},
+                  // Add sign in functionality
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const TabsScreen(),
+                    ));
+                  },
                   child: const Text('SIGN IN'),
                 ),
               ),

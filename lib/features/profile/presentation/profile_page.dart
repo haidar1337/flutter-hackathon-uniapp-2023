@@ -27,27 +27,6 @@ class _ProfilePageState extends State<ProfilePage> {
             height: boxHight,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20.0, top: 8.0, bottom: 8.0),
-            child: SafeArea(
-              child: SizedBox(
-                width: 110,
-                child: ElevatedButton(
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(backButtonColor),
-                  ),
-                  onPressed: () {},
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.arrow_back_ios),
-                      Text("Back"),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Padding(
             padding: const EdgeInsets.only(
               top: 8.0,
               bottom: 8.0,
