@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectname/common_widgets/CustomCardWidget.dart.dart';
+import 'package:projectname/common_widgets/custom_card_widget.dart';
 
 class Tareef extends StatelessWidget {
   const Tareef({super.key});

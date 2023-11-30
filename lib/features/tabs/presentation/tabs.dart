@@ -28,9 +28,13 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("KFUPM"),
         automaticallyImplyLeading: false,
+        title: Text("KFUPM",
+            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary)),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        centerTitle: true,
       ),
+      body: screens[_selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedPageIndex,
         onTap: _selectPage,
@@ -55,7 +59,6 @@ class _TabsScreenState extends State<TabsScreen> {
           ),
         ],
       ),
-      body: screens[_selectedPageIndex],
     );
   }
 }
