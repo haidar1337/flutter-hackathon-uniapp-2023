@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:projectname/common_widgets/CustomCardWidget.dart.dart';
+import 'package:projectname/features/tareef/presentation/tareef.dart';=======
 import 'package:projectname/features/tabs/presentation/tabs.dart';
 import 'package:projectname/features/profile/presentation/profile_page.dart';
 
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
               seedColor: const Color.fromARGB(255, 0, 125, 64)),
           useMaterial3: true,
         ),
+
         home: const TabsScreen());
   }
 }
