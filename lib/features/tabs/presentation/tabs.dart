@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectname/features/finalExamination/presentation/page.dart';
 import 'package:projectname/features/profile/presentation/profile_page.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class _TabsScreenState extends State<TabsScreen> {
     // Add rest of screens here
     const Center(child: Text("Home")),
     const Center(child: Text("Schedule")),
-    const Center(child: Text("Calendar")),
+    const ExaminationPage(),
     const ProfilePage(),
   ];
 

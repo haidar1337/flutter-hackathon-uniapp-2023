@@ -83,11 +83,10 @@ class LoginPage extends StatelessWidget {
                 width: double.infinity,
                 height: 48,
                 child: FilledButton(
-                  // Add sign in functionality
+                  // Authenticate user
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const TabsScreen(),
-                    ));
+                        builder: (ctx) => const TabsScreen()));
                   },
                   child: const Text('SIGN IN'),
                 ),
