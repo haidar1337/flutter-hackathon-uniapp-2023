@@ -1,3 +1,3 @@
 # projectname
 
-Flutter Weekend Hackathon Team XX Application 2023
+Flutter Weekend Hackathon Team Awladnh Application 2023
