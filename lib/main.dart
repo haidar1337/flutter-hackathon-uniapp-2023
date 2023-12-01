@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:projectname/features/tareef/presentation/evaluation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:projectname/features/authentication/presentation/login.dart';
 import 'package:projectname/firebase_options.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 0, 125, 64)),
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      home: LoginPage(),
     );
   }
 }
