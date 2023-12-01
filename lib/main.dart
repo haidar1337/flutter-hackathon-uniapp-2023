@@ -1,12 +1,21 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:projectname/features/tareef/presentation/evaluation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:projectname/features/authentication/presentation/login.dart';
+import 'package:projectname/firebase_options.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +25,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 0, 125, 64)),
         useMaterial3: true,
       ),
-      home: Evaluation(),
+      home: LoginPage(),
     );
   }
 }
