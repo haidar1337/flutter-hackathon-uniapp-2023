@@ -28,5 +28,4 @@ class CustomEventWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-}
+

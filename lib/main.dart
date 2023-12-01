@@ -1,8 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:projectname/features/events/data/event_data.dart';
-import 'package:projectname/features/events/presentation/event.dart';
 
-void main() => runApp(const MyApp());
+
+import 'package:projectname/features/tareef/presentation/evaluation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:projectname/features/authentication/presentation/login.dart';
+import 'package:projectname/firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const ProviderScope(child: MyApp()));
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,13 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         backgroundColor: Colors.green,
       ),
-      home: Event(
-        eventData: EventData(
-          name: 'Flutter Weekend',
-          location: 'KFUPM',
-          date: DateTime.parse('2023-12-10'),
-        ),
-      ),
+      home: LoginPage(),
     );
   }
 }
