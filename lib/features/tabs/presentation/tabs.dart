@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projectname/features/home/presentation/home.dart';
 import 'package:projectname/features/profile/presentation/profile_page.dart';
-import 'package:projectname/features/studyTools/presentation/study_tools.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});

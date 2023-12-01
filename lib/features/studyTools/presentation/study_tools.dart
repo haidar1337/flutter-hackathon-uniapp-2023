@@ -41,25 +41,27 @@ class StudyToolsPage extends StatelessWidget {
         "Track your study progress for the semester",
       ),
     ];
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Center(
-        child: ListView(children: [
-          Image.asset(
-            'assets/kfupm.jpg',
-            alignment: Alignment.center,
-            height: 128,
-            width: 128,
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          ...toolsData
-              .map(
-                (item) => CustomCard(item),
-              )
-              .toList(),
-        ]),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: ListView(children: [
+            Image.asset(
+              'assets/kfupm.jpg',
+              alignment: Alignment.center,
+              height: 128,
+              width: 128,
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            ...toolsData
+                .map(
+                  (item) => CustomCard(item),
+                )
+                .toList(),
+          ]),
+        ),
       ),
     );
   }
