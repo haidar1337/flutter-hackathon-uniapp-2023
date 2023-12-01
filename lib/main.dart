@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       ),
       home: Event(
         eventData: EventData(
-          name: 'ابو حسوة',
-          location: 'شطيرتي',
+          name: 'Flutter Weekend',
+          location: 'KFUPM',
           date: DateTime.parse('2023-12-10'),
         ),
       ),
