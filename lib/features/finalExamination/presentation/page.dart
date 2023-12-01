@@ -34,15 +34,17 @@ class _ExaminationPageState extends State<ExaminationPage> {
   @override
   Widget build(BuildContext context) {
     return data.isNotEmpty
-        ? ListView.builder(
-            itemCount: data.length,
-            itemBuilder: (context, index) {
-              if (studentCourses.contains(data[index].courseId)) {
-                return ExamCard(data[index]);
-              }
-              return const SizedBox.shrink();
-            },
+        ? Scaffold(
+            body: ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (context, index) {
+                if (studentCourses.contains(data[index].courseId)) {
+                  return ExamCard(data[index]);
+                }
+                return const SizedBox.shrink();
+              },
+            ),
           )
-        : const Center(child: CircularProgressIndicator());
+        : const Scaffold(body: Center(child: CircularProgressIndicator()));
   }
 }
