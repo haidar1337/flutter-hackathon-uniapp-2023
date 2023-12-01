@@ -30,23 +30,15 @@ class LoginPage extends ConsumerWidget {
       print(password);
       try {
         success = await authProvider.signIn(
-          studentId,
-          password,
+          studentId!,
+          password!,
         );
-        if (success) {
-          if (!context.mounted) {
-            return;
-          }
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (ctx) => const TabsScreen(),
-            ),
-          );
-        }
+        print(success);
       } on FirebaseAuthException catch (st) {
         if (!context.mounted) {
           return;
         }
+        ScaffoldMessenger.of(context).clearSnackBars();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
@@ -55,6 +47,16 @@ class LoginPage extends ConsumerWidget {
           ),
         );
         return;
+      }
+      if (success) {
+        if (!context.mounted) {
+          return;
+        }
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctx) => const TabsScreen(),
+          ),
+        );
       }
     }
 

@@ -8,12 +8,8 @@ class AuthRepository {
   final FirebaseAuth _firebaseAuthinstance = FirebaseAuth.instance;
   final BuildContext context;
 
-  Future<bool> signIn(String? studentId, String? password) async {
-    if (studentId == null || password == null) {
-      return false;
-    }
-
-    _firebaseAuthinstance.signInWithEmailAndPassword(
+  Future<bool> signIn(String studentId, String password) async {
+    await _firebaseAuthinstance.signInWithEmailAndPassword(
         email: studentId, password: password);
 
     return true;
