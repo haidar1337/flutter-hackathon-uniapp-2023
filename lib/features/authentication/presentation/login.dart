@@ -26,14 +26,11 @@ class LoginPage extends ConsumerWidget {
       }
       formKey.currentState!.save();
       bool success = false;
-      print(studentId);
-      print(password);
       try {
         success = await authProvider.signIn(
           studentId!,
           password!,
         );
-        print(success);
       } on FirebaseAuthException catch (st) {
         if (!context.mounted) {
           return;
