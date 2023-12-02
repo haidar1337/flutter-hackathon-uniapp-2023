@@ -35,11 +35,41 @@ class _ExaminationPageState extends State<ExaminationPage> {
   Widget build(BuildContext context) {
     return data.isNotEmpty
         ? Scaffold(
+            appBar: AppBar(
+              iconTheme: IconThemeData(
+                // Set the AppBar icon color to white
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(24),
+                ),
+              ),
+              elevation: 5,
+              title: Text(
+                'Your Final Exams Schedule',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 1.0,
+                      color: Colors.black.withOpacity(0.5),
+                      offset: const Offset(2, 2),
+                    ),
+                  ],
+                ),
+              ),
+              backgroundColor: Theme.of(context).colorScheme.primary,
+            ),
             body: ListView.builder(
               itemCount: data.length,
               itemBuilder: (context, index) {
                 if (studentCourses.contains(data[index].courseId)) {
-                  return ExamCard(data[index]);
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ExamCard(data[index]),
+                  );
                 }
                 return const SizedBox.shrink();
               },

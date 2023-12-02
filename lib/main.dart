@@ -4,10 +4,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:projectname/common_widgets/custom_grade_card.dart';
 import 'package:projectname/features/authentication/presentation/login.dart';
 import 'package:projectname/features/grades/presentation/grade_page.dart';
+
+import 'package:projectname/features/tabs/presentation/tabs.dart';
 import 'package:projectname/firebase_options.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -27,7 +30,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const GradesPage(),
+
+      home: const LoginPage(),
     );
   }
 }
