@@ -12,18 +12,17 @@ class TabsScreen extends StatefulWidget {
 
 class _TabsScreenState extends State<TabsScreen> {
   List<Widget> screens = [
-    // Add rest of screens here
-
     const Home(),
     const Center(child: Text('Schedule')),
     const CalendarPage(),
     const ProfilePage(),
   ];
 
-  int _selectedPageIndex = 0;
-  void _selectPage(index) {
+  int selectedPageIndex = 0;
+
+  void selectPage(int index) {
     setState(() {
-      _selectedPageIndex = index;
+      selectedPageIndex = index;
     });
   }
 
@@ -32,17 +31,49 @@ class _TabsScreenState extends State<TabsScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("KFUPM",
-            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary)),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(24),
+          ),
+        ),
+        elevation: 5,
+        title: Text(
+          "KFUPM",
+          style: TextStyle(
+            fontSize: 24,
+            color: Theme.of(context).colorScheme.onPrimary,
+            shadows: [
+              Shadow(
+                blurRadius: 1.0,
+                color: Colors.black.withOpacity(0.5),
+                offset: const Offset(2, 2),
+              ),
+            ],
+          ),
+        ),
         backgroundColor: Theme.of(context).colorScheme.primary,
-        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.notifications,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+            onPressed: () {
+              // Notifications action
+            },
+          ),
+        ],
       ),
-      body: screens[_selectedPageIndex],
+      body: screens[selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedPageIndex,
-        onTap: _selectPage,
+        currentIndex: selectedPageIndex,
+        onTap: selectPage,
         selectedItemColor: Theme.of(context).colorScheme.primary,
-        unselectedItemColor: Theme.of(context).colorScheme.onSurface,
+        unselectedItemColor:
+            Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+        showUnselectedLabels: true,
+        elevation: 10.0,
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
