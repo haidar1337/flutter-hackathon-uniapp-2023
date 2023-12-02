@@ -16,7 +16,33 @@ class Evaluation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Course Evaluations')),
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          // Set the AppBar icon color to white
+          color: Theme.of(context).colorScheme.onPrimary,
+        ),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(24),
+          ),
+        ),
+        elevation: 5,
+        title: Text(
+          'Evaluation',
+          style: TextStyle(
+            fontSize: 24,
+            color: Theme.of(context).colorScheme.onPrimary,
+            shadows: [
+              Shadow(
+                blurRadius: 1.0,
+                color: Colors.black.withOpacity(0.5),
+                offset: const Offset(2, 2),
+              ),
+            ],
+          ),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+      ),
       body: ListView(
         children: [
           CustomEvaluationWidget(
