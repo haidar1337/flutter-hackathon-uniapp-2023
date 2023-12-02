@@ -2,35 +2,36 @@ import 'package:flutter/material.dart';
 
 class CustomCardWidget extends StatelessWidget {
   final String title;
+  final Text? subtitle; // Optional subtitle for additional text
   final IconData icon;
-  final VoidCallback? onTap; // Added callback for tap event
+  final Widget? trailing; // Optional trailing widget
+  final VoidCallback? onTap;
 
   const CustomCardWidget({
     Key? key,
     required this.title,
+    this.subtitle, // Optional subtitle
     required this.icon,
-    this.onTap, // Constructor parameter for tap event
+    this.trailing, // Optional trailing widget
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap, // Handling tap event
-      child: SizedBox(
-        height: 100,
-        width: 100,
-        child: Card(
-          child: ListTile(
-            leading: Icon(
-              icon,
-              size: 30,
-            ),
-            title: Center(
-                child: Text(
-              title,
-              style: const TextStyle(fontSize: 20),
-            )),
+      onTap: onTap,
+      child: Card(
+        child: ListTile(
+          leading: Icon(
+            icon,
+            size: 56.0, // Increased size of the icon
           ),
+          title: Text(
+            title,
+            style: const TextStyle(fontSize: 24), // Increased font size
+          ),
+          subtitle: subtitle, // Subtitle text
+          trailing: trailing, // Trailing widget
         ),
       ),
     );
