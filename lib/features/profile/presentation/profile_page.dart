@@ -7,12 +7,12 @@ const Color rectBackColor = Colors.green;
 const Color backButtonColor = Colors.white;
 final Color redColor = Colors.red.shade900;
 const double boxHight = 160;
-const String personName = "Ali hubail";
+const String personName = "Ahmed Talal";
 const String stuID = "202017740";
 const String govID = "1116607423";
 const String nationEng = "Saudi";
 const String dateEng = "25/6/2002";
-const String personEmail = "Alllli@gmail.com";
+const String personEmail = "s202017740@kfupm.edu.sa";
 const textStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
 
 final Student student = Student(
