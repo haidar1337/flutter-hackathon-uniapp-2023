@@ -38,12 +38,11 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: pageBackColor,
       body: Stack(
         children: [
-          Expanded(
-            child: Container(
-              color: rectBackColor,
-              width: double.maxFinite,
-              height: boxHight,
-            ),
+
+          Container(
+            color: rectBackColor,
+            width: double.maxFinite,
+            height: boxHight,
           ),
           Padding(
             padding: const EdgeInsets.only(

@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+import 'package:projectname/features/schedulePage/data/course.dart';
+
+List<Course> courses = [
+  Course(
+    courseName: "STAT319",
+    location: "59 - 2009",
+    startTime: DateTime(2023, 10, 5, 8, 0, 0),
+    endTime: DateTime(2023, 10, 5, 8, 50, 0),
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=SUNDAY,TUESDAY;',
+    isAllDay: false,
+    background: Colors.red,
+  ),
+  Course(
+    courseName: "GS332",
+    location: "24 - 141",
+    startTime: DateTime(2023, 10, 5, 9, 0, 0),
+    endTime: DateTime(2023, 10, 5, 9, 50, 0),
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=SUNDAY,TUESDAY,THURSDAY;',
+    isAllDay: false,
+    background: Colors.green,
+  ),
+  Course(
+    courseName: "ICS410",
+    location: "23 - 014",
+    startTime: DateTime(2023, 10, 5, 10, 0, 0),
+    endTime: DateTime(2023, 10, 5, 10, 50, 0),
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=SUNDAY,TUESDAY, THURSDAY;',
+    isAllDay: false,
+    background: Colors.purple,
+  ),
+  Course(
+    courseName: "ICS353",
+    startTime: DateTime(2023, 10, 5, 11, 0, 0),
+    endTime: DateTime(2023, 10, 5, 11, 50, 0),
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=SUNDAY,TUESDAY,THURSDAY;',
+    isAllDay: false,
+    background: Colors.blue,
+    location: '24 - 128',
+  ),
+  Course(
+    courseName: "BUS200",
+    startTime: DateTime(2023, 10, 5, 11, 0, 0),
+    endTime: DateTime(2023, 10, 5, 12, 15, 0),
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=MONDAY,WEDENSDAY;',
+    isAllDay: false,
+    background: Colors.amber,
+    location: '24 - 120',
+  ),
+  Course(
+    courseName: "SWE363",
+    startTime: DateTime(2023, 10, 5, 13, 0, 0),
+    endTime: DateTime(2023, 10, 5, 14, 15, 0),
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=MONDAY,WEDENSDAY;',
+    isAllDay: false,
+    background: Colors.cyan,
+    location: '24 - 141',
+  ),
+  Course(
+    courseName: "STAT319 LAB",
+    startTime: DateTime(2023, 10, 5, 8, 0, 0),
+    endTime: DateTime(2023, 10, 5, 9, 50, 0),
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=MONDAY;',
+    isAllDay: false,
+    background: Colors.orange,
+    location: '5 - 001',
+  ),
+];
