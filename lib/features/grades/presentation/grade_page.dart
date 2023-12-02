@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:projectname/common_widgets/custom_card_widget.dart';
 import 'package:projectname/common_widgets/custom_grade_card.dart';
+import 'package:projectname/features/grades/data/class_course.dart';
 
 class GradesPage extends StatefulWidget {
   const GradesPage({Key? key}) : super(key: key);
@@ -24,18 +25,17 @@ class _GradesPageState extends State<GradesPage> {
   @override
   void initState() {
     super.initState();
-    // Assuming the initial GPA calculation is needed
     gpa = calculateGPA(CourseData.sampleData);
   }
 
-  double calculateGPA(List<dynamic> courses) {
+  double calculateGPA(List<ClassCourse> courses) {
     if (courses.isEmpty) {
       return 0.0;
     }
 
     double totalPoints = 0;
-    for (var course in courses) {
-      totalPoints += _gradeToPoint(course["grade"]);
+    for (ClassCourse course in courses) {
+      totalPoints += _gradeToPoint(course.grade!);
     }
     return totalPoints / courses.length;
   }
@@ -114,25 +114,21 @@ class _GradesPageState extends State<GradesPage> {
               ),
             ),
           ),
+          CustomCardWidget(
+            title: "GPA & Badge",
+            subtitle: Text("GPA: ${gpa.toStringAsFixed(2)}",
+                style: const TextStyle(fontSize: 20)),
+            icon: Icons.school,
+            onTap: () {
+              // Handle tap
+            },
+          ),
           Expanded(
-            child: ListView(
-              children: [
-                CustomCardWidget(
-                  title: "GPA & Badge",
-                  subtitle: Text("GPA: ${gpa.toStringAsFixed(2)}",
-                      style: const TextStyle(fontSize: 20)),
-                  icon: Icons.school,
-                  onTap: () {
-                    // Handle tap
-                  },
-                ),
-                ...List.generate(
-                    CourseData.sampleData.length,
-                    (index) => CustomGradeCard(
-                          course: CourseData.sampleData,
-                          index: index,
-                        )),
-              ],
+            child: ListView.builder(
+              itemBuilder: (ctx, index) {
+                return CustomGradeCard(course: CourseData.sampleData[index]);
+              },
+              itemCount: CourseData.sampleData.length,
             ),
           ),
         ],
@@ -146,34 +142,33 @@ class CourseData {
   static final _random = Random();
 
   static int _randomScore(int max) => _random.nextInt(max) + 1;
-
   static get sampleData => [
-        {
-          "name": "ICS 321",
-          "description": "Database Systems",
-          "grade": "A+",
-          "quizzes": _randomScore(10), // Random score out of 10
-          "midterm": _randomScore(25), // Random score out of 25
-          "homeworks": _randomScore(15), // Random score out of 15
-          "final": _randomScore(30), // Random score out of 30
-        },
-        {
-          "name": "GS 332 ",
-          "description": "Principles of Sociology",
-          "grade": "A+",
-          "quizzes": _randomScore(10),
-          "midterm": _randomScore(25),
-          "homeworks": _randomScore(15),
-          "final": _randomScore(30),
-        },
-        {
-          "name": "SWE 316",
-          "description": "Software Design and Construction",
-          "grade": "A+",
-          "quizzes": _randomScore(10),
-          "midterm": _randomScore(25),
-          "homeworks": _randomScore(15),
-          "final": _randomScore(30),
-        }
+        ClassCourse(
+          name: "ICS 321",
+          description: "Database Systems",
+          grade: "A+",
+          quizzes: _randomScore(10), // Random score out of 10
+          midterm: _randomScore(25), // Random score out of 25
+          homeworks: _randomScore(15), // Random score out of 15
+          finals: _randomScore(30), // Random score out of 30
+        ),
+        ClassCourse(
+          name: "GS 332 ",
+          description: "Principles of Sociology",
+          grade: "A+",
+          quizzes: _randomScore(10),
+          midterm: _randomScore(25),
+          homeworks: _randomScore(15),
+          finals: _randomScore(30),
+        ),
+        ClassCourse(
+          name: "SWE 316",
+          description: "Software Design and Construction",
+          grade: "A+",
+          quizzes: _randomScore(10),
+          midterm: _randomScore(25),
+          homeworks: _randomScore(15),
+          finals: _randomScore(30),
+        )
       ];
 }

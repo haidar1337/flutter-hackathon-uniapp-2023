@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:projectname/common_widgets/custom_card_widget.dart';
+import 'package:projectname/features/grades/data/class_course.dart';
 
 class CustomGradeCard extends StatelessWidget {
-  const CustomGradeCard({required this.course, required this.index, super.key});
-  final course;
-  final index;
+  const CustomGradeCard({required this.course, super.key});
+  final ClassCourse course;
 
   @override
   Widget build(BuildContext context) {
     return CustomCardWidget(
-      title: course[index]["name"],
-      subtitle: Text(course[index]["description"]),
-      trailing: Text(course[index]["grade"],
-          style: TextStyle(
-              color: _getGradeColor(course[index]["grade"]),
-              fontWeight: FontWeight.bold,
-              fontSize: 20)),
+      title: course.name!, // Display course name
+      subtitle: Text(course.description!, // Display course description
+          style: const TextStyle(fontSize: 16)),
+      grade: course.grade!,
+      color: _getGradeColor(course.grade!), // Color based on grade
       onTap: () {
         showModalBottomSheet(
           context: context,
@@ -29,27 +27,27 @@ class CustomGradeCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: Text(course[index]["name"],
+                    child: Text(course.name!,
                         style: const TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold)),
                   ),
                   const SizedBox(height: 10),
-                  Text(course[index]["description"],
+                  Text(course.description!,
                       style: const TextStyle(fontSize: 18)),
                   const SizedBox(height: 15),
-                  Text("Quizzes: ${course[index]['quizzes']}",
+                  Text("Quizzes: ${course.quizzes!}",
                       style: const TextStyle(fontSize: 16)),
                   const SizedBox(height: 8),
-                  Text("Mid-Term: ${course[index]['midterm']}",
+                  Text("Mid-Term: ${course.midterm!}",
                       style: const TextStyle(fontSize: 16)),
                   const SizedBox(height: 8),
-                  Text("Homeworks: ${course[index]['homeworks']}",
+                  Text("Homeworks: ${course.homeworks!}",
                       style: const TextStyle(fontSize: 16)),
                   const SizedBox(height: 8),
-                  Text("Final: ${course[index]['final']}",
+                  Text("Final: ${course.finals!}",
                       style: const TextStyle(fontSize: 16)),
                   const SizedBox(height: 15),
-                  Text("Grade: ${course[index]["grade"]}",
+                  Text("Grade: ${course.grade!}",
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold)),
                 ],
