@@ -38,7 +38,6 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: pageBackColor,
       body: Stack(
         children: [
-
           Container(
             color: rectBackColor,
             width: double.maxFinite,
@@ -70,7 +69,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                 ),
-                dataGenerator(student: student),
+                DataGenerator(student: student),
                 const SizedBox(height: 40),
                 SizedBox(
                   width: double.maxFinite,

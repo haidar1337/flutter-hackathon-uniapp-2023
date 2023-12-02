@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:projectname/features/profile/data/Student.dart';
 import 'package:projectname/features/profile/data/row_generator.dart';
 
-class dataGenerator extends StatelessWidget {
+class DataGenerator extends StatelessWidget {
   Student? student;
 
-  dataGenerator({
+  DataGenerator({
     super.key,
     required this.student,
   });
