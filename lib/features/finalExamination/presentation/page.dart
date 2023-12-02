@@ -35,6 +35,18 @@ class _ExaminationPageState extends State<ExaminationPage> {
   Widget build(BuildContext context) {
     return data.isNotEmpty
         ? Scaffold(
+            appBar: AppBar(
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              iconTheme: IconThemeData(
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+              title: Text(
+                'Your Final Exams Schedule',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+              ),
+            ),
             body: ListView.builder(
               itemCount: data.length,
               itemBuilder: (context, index) {

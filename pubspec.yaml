@@ -41,6 +41,7 @@ dependencies:
   flutter_riverpod: ^2.4.9
   firebase_core: ^2.24.0
   firebase_auth: ^4.15.0
+  image_picker: ^1.0.4
 
 dev_dependencies:
   flutter_test:

@@ -8,6 +8,9 @@ class Tareef extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.onPrimary,
+        ),
         title:
             const Text("KFUPM Tareef", style: TextStyle(color: Colors.white)),
         backgroundColor: Theme.of(context).colorScheme.primary,

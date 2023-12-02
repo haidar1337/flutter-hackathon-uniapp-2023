@@ -42,6 +42,16 @@ class StudyToolsPage extends StatelessWidget {
       ),
     ];
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.onPrimary,
+        ),
+        title: Text(
+          'Study Tools',
+          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(

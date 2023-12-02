@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projectname/features/home/presentation/home.dart';
+import 'package:projectname/features/interactive-calendar/presentation/calendar.dart';
 import 'package:projectname/features/profile/presentation/profile_page.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -15,9 +16,7 @@ class _TabsScreenState extends State<TabsScreen> {
 
     const Home(),
     const Center(child: Text('Schedule')),
-    const Center(
-      child: Text('Calendar'),
-    ),
+    const CalendarPage(),
     const ProfilePage(),
   ];
 
