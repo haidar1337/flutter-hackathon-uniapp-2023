@@ -21,7 +21,6 @@ class _EventModalState extends State<EventModal> {
   final TextEditingController _descriptionControlloer = TextEditingController();
   @override
   void initState() {
-    print(widget.currentEvent);
     if (widget.currentEvent != null) {
       _titleController.text = widget.currentEvent!.title;
       _descriptionControlloer.text = widget.currentEvent!.description!;

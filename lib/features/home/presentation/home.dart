@@ -1,87 +1,114 @@
 import 'package:flutter/material.dart';
 import 'package:projectname/common_widgets/home_custom_card.dart';
 import 'package:projectname/features/evaluation/presentation/evaluation.dart';
-import 'package:projectname/features/events/data/event_data.dart';
 import 'package:projectname/features/events/presentation/event.dart';
 import 'package:projectname/features/finalExamination/presentation/page.dart';
+import 'package:projectname/features/grades/presentation/grade_page.dart';
+import 'package:projectname/features/help/presentation/help.dart';
 import 'package:projectname/features/studyTools/presentation/study_tools.dart';
 import 'package:projectname/features/tareef/presentation/tareef.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  String currentScreen = 'home';
+
+  @override
   Widget build(BuildContext context) {
-    return GridView(
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      children: [
-        const HomeCustomCard(icon: Icons.qr_code_outlined, text: 'ATTENDANCE'),
-        HomeCustomCard(
-          text: 'EVENTS',
-          icon: Icons.event,
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => Event(
-                  eventData: EventData(
-                    name: 'Test',
-                    location: 'Test',
-                    date: DateTime.now(),
-                  ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GridView(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
+        ),
+        children: [
+          HomeCustomCard(
+            icon: Icons.qr_code_outlined,
+            text: 'ATTENDANCE',
+            onTap: () {
+              // handle attendance
+            },
+          ),
+          HomeCustomCard(
+            text: 'EVENTS',
+            icon: Icons.event,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Event(),
                 ),
-              ),
-            );
-          },
-        ),
-        HomeCustomCard(
-          icon: Icons.text_snippet_outlined,
-          text: 'FINAL EXAMINATION SCHEDULE',
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const ExaminationPage(),
-              ),
-            );
-          },
-        ),
-        const HomeCustomCard(
-          icon: Icons.assignment_outlined,
-          text: 'ASSIGNMENTS',
-        ),
-        HomeCustomCard(
-          icon: Icons.person_3_outlined,
-          text: 'TAREEF',
-          onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const Tareef(),
-            ));
-          },
-        ),
-        HomeCustomCard(
-          icon: Icons.book_outlined,
-          text: 'STUDY TOOLS & RESOURCES',
-          onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const StudyToolsPage(),
-            ));
-          },
-        ),
-        HomeCustomCard(
-          icon: Icons.feedback_outlined,
-          text: 'FEEDBACK & EVALUATION TOOL',
-          onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => Evaluation(),
-            ));
-          },
-        ),
-        const HomeCustomCard(
-          icon: Icons.help_outline,
-          text: 'HELP',
-        ),
-      ],
+              );
+            },
+          ),
+          HomeCustomCard(
+            icon: Icons.text_snippet_outlined,
+            text: 'FINAL EXAMINATION SCHEDULE',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ExaminationPage(),
+                ),
+              );
+            },
+          ),
+          HomeCustomCard(
+            icon: Icons.grade,
+            text: 'GRADES',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const GradesPage(),
+                ),
+              );
+            },
+          ),
+          HomeCustomCard(
+            icon: Icons.person_3_outlined,
+            text: 'TAREEF',
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const Tareef(),
+              ));
+            },
+          ),
+          HomeCustomCard(
+            icon: Icons.book_outlined,
+            text: 'STUDY TOOLS & RESOURCES',
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const StudyToolsPage(),
+              ));
+            },
+          ),
+          HomeCustomCard(
+            icon: Icons.feedback_outlined,
+            text: 'FEEDBACK & EVALUATION TOOL',
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => Evaluation(),
+              ));
+            },
+          ),
+          HomeCustomCard(
+            icon: Icons.help_outline,
+            text: 'HELP',
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const Help(),
+              ));
+            },
+          ),
+        ],
+      ),
     );
   }
 }

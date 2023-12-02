@@ -13,33 +13,36 @@ class CustomCard extends StatelessWidget {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => const DemoPage()));
       },
-      child: Card(
-        color: Theme.of(context).colorScheme.surface,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 20,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    item.title,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const Spacer(),
-                ],
-              ),
-              Text(item.description,
-                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .onSurface
-                            .withOpacity(0.7),
-                      )),
-            ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+        child: Card(
+          color: Theme.of(context).colorScheme.surface,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16,
+              horizontal: 20,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      item.title,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    const Spacer(),
+                  ],
+                ),
+                Text(item.description,
+                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                          color: Theme.of(context)
+                              .colorScheme
+                              .onSurface
+                              .withOpacity(0.7),
+                        )),
+              ],
+            ),
           ),
         ),
       ),

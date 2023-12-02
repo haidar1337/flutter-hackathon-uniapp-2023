@@ -18,20 +18,26 @@ class CustomCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Card(
-        child: ListTile(
-          leading: Icon(
-            icon,
-            size: 56.0, // Increased size of the icon
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: InkWell(
+        onTap: onTap, // Handling tap event
+        child: SizedBox(
+          height: 100,
+          width: 100,
+          child: Card(
+            child: ListTile(
+              leading: Icon(
+                icon,
+                size: 30,
+              ),
+              title: Center(
+                  child: Text(
+                title,
+                style: const TextStyle(fontSize: 20),
+              )),
+            ),
           ),
-          title: Text(
-            title,
-            style: const TextStyle(fontSize: 24), // Increased font size
-          ),
-          subtitle: subtitle, // Subtitle text
-          trailing: trailing, // Trailing widget
         ),
       ),
     );
