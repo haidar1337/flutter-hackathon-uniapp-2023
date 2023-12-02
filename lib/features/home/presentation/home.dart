@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:projectname/common_widgets/home_custom_card.dart';
 import 'package:projectname/features/evaluation/presentation/evaluation.dart';
 import 'package:projectname/features/events/presentation/event.dart';
@@ -35,10 +34,6 @@ class _HomeState extends State<Home> {
             text: 'ATTENDANCE',
             onTap: () {
               // handle attendance
-              final image = ImagePicker().pickImage(
-                source: ImageSource.camera,
-                imageQuality: 50,
-              );
             },
           ),
           HomeCustomCard(
@@ -65,13 +60,13 @@ class _HomeState extends State<Home> {
             },
           ),
           HomeCustomCard(
-            icon: Icons.assignment_outlined,
-            text: 'ASSIGNMENTS',
+            icon: Icons.grade,
+            text: 'GRADES',
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CalendarPage(),
+                  builder: (context) => const GradesPage(),
                 ),
               );
             },

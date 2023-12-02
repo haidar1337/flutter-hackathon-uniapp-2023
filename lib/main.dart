@@ -5,9 +5,8 @@ import 'package:projectname/features/authentication/presentation/login.dart';
 
 import 'package:projectname/firebase_options.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

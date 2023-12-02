@@ -60,11 +60,11 @@ class _CalendarPageState extends State<CalendarPage> {
     }
   }
 
-  void _addCalendarEvent(CalendarEvent CalendarEvent) {
+  void _addCalendarEvent(CalendarEvent calendarEvent) {
     setState(() {
-      final CalendarEvents = _getCalendarEventsForDay(CalendarEvent.date!);
-      CalendarEvents.add(CalendarEvent);
-      kCalendarEvents[CalendarEvent.date!] = CalendarEvents;
+      final calendarEvents = _getCalendarEventsForDay(calendarEvent.date!);
+      calendarEvents.add(calendarEvent);
+      kCalendarEvents[calendarEvent.date!] = calendarEvents;
     });
   }
 
