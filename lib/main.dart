@@ -1,6 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:projectname/common_widgets/custom_grade_card.dart';
+import 'package:projectname/features/authentication/presentation/login.dart';
+import 'package:projectname/features/grades/presentation/grade_page.dart';
+
 import 'package:projectname/features/tabs/presentation/tabs.dart';
 import 'package:projectname/firebase_options.dart';
 
@@ -26,7 +30,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const TabsScreen(),
+
+      home: const LoginPage(),
     );
   }
 }
