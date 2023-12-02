@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projectname/common_widgets/custom_card_widget.dart';
+import 'package:projectname/features/tareef/data/pdf_screen.dart';
 
 class Tareef extends StatelessWidget {
   const Tareef({super.key});
@@ -41,22 +42,49 @@ class Tareef extends StatelessWidget {
             CustomCardWidget(
               title: "Housing Contract",
               icon: Icons.house,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          const PDFScreen(path: 'assets/tareef.png')),
+                );
+              },
             ),
             CustomCardWidget(
               title: "English Identification Letter",
               icon: Icons.perm_identity,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const PDFScreen(path: 'assets/tareef.png')));
+              },
             ),
             CustomCardWidget(
               title: "Arabic Identification Letter",
               icon: Icons.perm_identity,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const PDFScreen(path: 'assets/tareef.png')));
+              },
             ),
             CustomCardWidget(
               title: "Honor Letter",
               icon: Icons.star,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const PDFScreen(path: 'assets/tareef.png'),
+                  ),
+                );
+              },
             )
           ],
         ),
