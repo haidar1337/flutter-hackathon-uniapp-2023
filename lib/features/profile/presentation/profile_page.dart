@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projectname/features/profile/data/Student.dart';
 import 'package:projectname/features/profile/data/data_generator.dart';
+import 'package:projectname/features/profile/data/student.dart';
 
 const Color pageBackColor = Colors.white;
 const Color rectBackColor = Colors.green;
