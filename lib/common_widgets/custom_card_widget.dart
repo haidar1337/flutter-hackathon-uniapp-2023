@@ -18,7 +18,6 @@ class CustomCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: InkWell(
@@ -39,12 +38,6 @@ class CustomCardWidget extends StatelessWidget {
               )),
             ),
           ),
-          title: Text(
-            title,
-            style: const TextStyle(fontSize: 24), // Increased font size
-          ),
-          subtitle: subtitle, // Subtitle text
-          trailing: trailing, // Trailing widget
         ),
       ),
     );

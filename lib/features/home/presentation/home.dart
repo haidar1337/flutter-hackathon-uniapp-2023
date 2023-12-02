@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:projectname/common_widgets/home_custom_card.dart';
 import 'package:projectname/features/evaluation/presentation/evaluation.dart';
-import 'package:projectname/features/events/data/event_data.dart';
 import 'package:projectname/features/events/presentation/event.dart';
 import 'package:projectname/features/finalExamination/presentation/page.dart';
 import 'package:projectname/features/help/presentation/help.dart';

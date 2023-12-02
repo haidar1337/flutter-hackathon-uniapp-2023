@@ -34,32 +34,29 @@ class Tareef extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: ListView(
-          children: [
-            CustomCardWidget(
-              title: "Housing Contract",
-              icon: Icons.house,
-              onTap: () {},
-            ),
-            CustomCardWidget(
-              title: "English Identification Letter",
-              icon: Icons.perm_identity,
-              onTap: () {},
-            ),
-            CustomCardWidget(
-              title: "Arabic Identification Letter",
-              icon: Icons.perm_identity,
-              onTap: () {},
-            ),
-            CustomCardWidget(
-              title: "Honor Letter",
-              icon: Icons.star,
-              onTap: () {},
-            )
-          ],
-        ),
+      body: ListView(
+        children: [
+          CustomCardWidget(
+            title: "Housing Contract",
+            icon: Icons.house,
+            onTap: () {},
+          ),
+          CustomCardWidget(
+            title: "English Identification Letter",
+            icon: Icons.perm_identity,
+            onTap: () {},
+          ),
+          CustomCardWidget(
+            title: "Arabic Identification Letter",
+            icon: Icons.perm_identity,
+            onTap: () {},
+          ),
+          CustomCardWidget(
+            title: "Honor Letter",
+            icon: Icons.star,
+            onTap: () {},
+          )
+        ],
       ),
     );
   }
