@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 
 class CustomCardWidget extends StatelessWidget {
   final String title;
+  final Text? subtitle; // Optional subtitle for additional text
   final IconData icon;
-  final VoidCallback? onTap; // Added callback for tap event
+  final Widget? trailing; // Optional trailing widget
+  final VoidCallback? onTap;
 
   const CustomCardWidget({
     Key? key,
     required this.title,
+    this.subtitle, // Optional subtitle
     required this.icon,
-    this.onTap, // Constructor parameter for tap event
+    this.trailing, // Optional trailing widget
+    this.onTap,
   }) : super(key: key);
 
   @override

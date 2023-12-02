@@ -35,6 +35,7 @@ class Tareef extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: ListView(
